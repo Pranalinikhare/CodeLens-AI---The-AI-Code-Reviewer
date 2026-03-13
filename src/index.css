@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 175 80% 50%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 80%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 145 70% 50%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 220 20% 6%;
+
+    --info: 210 80% 60%;
+    --info-foreground: 220 20% 6%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 175 80% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 210 20% 80%;
+    --sidebar-primary: 175 80% 50%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 16% 14%;
+    --sidebar-accent-foreground: 210 20% 80%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 175 80% 50%;
+
+    --glow-primary: 175 80% 50%;
+    --glow-accent: 145 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.3),
+                0 0 40px -10px hsl(var(--primary) / 0.15);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px -5px hsl(var(--accent) / 0.3),
+                0 0 40px -10px hsl(var(--accent) / 0.15);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
